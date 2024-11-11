@@ -6,12 +6,11 @@
 pthread_mutex_t mutex1 = PTHREAD_MUTEX_INITIALIZER;
 pthread_mutex_t mutex2 = PTHREAD_MUTEX_INITIALIZER;
 
-// Função para a primeira thread
 void* thread_func1(void* arg) {
     // Bloqueia o primeiro mutex
     pthread_mutex_lock(&mutex1);
     printf("Thread 1: bloqueou mutex1, tentando bloquear mutex2...\n");
-    sleep(1); // Simula algum processamento
+    sleep(1); // Inicia a simulaçao 
 
     // Tenta bloquear o segundo mutex, mas mutex2 já está bloqueado pela thread 2
     pthread_mutex_lock(&mutex2);
